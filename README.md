@@ -1,4 +1,69 @@
-# Getting Started with Create React App
+Test Assignment for UpLab Boot Camp 3
+## Overview
+Welcome to the UpLab Boot Camp. This is the test assignment for you to get your brains prepared before the course. The number of places is limited, so the purpose of this test assignment is to choose the best candidates that are able to understand and complete tasks of different complexity.
+
+The test assignment is a simple todo list application that allows you to create your own list that is saved in your browser memory. 
+The application is supposed to perform the following actions:
+- add a new task
+- set a due date for a task
+- see a list of todos
+- mark todo as completed
+- remove todos
+- see all the todos along with completed
+
+### Structure of the assignment
+In the daily life, programmers should fix bugs before adding features. Who is willing to use an application full of bugs, but with tons of features? That's why it is mandatory to complete all the bugs from the list.
+
+Tasks list is a list of new features that should be added to the working application. It should allow you to choose an order, pick only the features that you can implement.
+__Please take a note that different tasks have different number of points__.
+
+__Important__: partial task solution doesn't count. Solutions with bugs doesn't count - test your code.
+
+## How to work on your assignment
+
+1. Create a __private__ mirror of this repo in your GitHub account to avoid exposing your code and invite `brmk` as a collaborator (Settings -> Collaborators). You can learn how to do it here: https://help.github.com/articles/duplicating-a-repository/
+2. Setup your environment (please see Environment section for versions in the end of this file)
+3. Install npm dependencies with command `npm i` or `yarn`
+4. Start the app `npm run start` or `yarn start`
+5. Please try to have 1 commit per task/bugfix. When you complete your task, do not forget to mark it as completed in the list below. Just put an `x` into the checkbox between braces ( `- [ ]` - unchecked, `- [x]` - checked ).
+6. Do not forget to constantly push your changes.
+7. When you finish your assignment, please send an email to hi@uplab.io with the link to your GitHub repo and a list of finished tasks.
+
+We only accept your assignments in the GitHub. Do not send us any zip archives with your projects!
+
+__Have a question?__ Please, do not hesitate to contact us at https://fb.me/uplab.life, https://instagr.am/uplab.life or by email hi@uplab.io
+
+## Assignment
+
+### Bugs (mandatory):
+
+- [ ] B1.
+- [ ] B2.
+
+### Tasks (optional):
+
+- [ ] T1.
+- [ ] T2.
+- [ ] T3.
+- [ ] T4.
+- [ ] T5. Deploy your demo app on Netlify or another hosting __4 points__ 
+
+Links:
+* http://netlify.com
+* https://zeit.co/
+
+__Note:__ you can do some extra stuff if you want. Please write about it somewhere and we will add extra points to your application!
+
+-----
+
+## Handy links that might help you
+
+0. JS fundamentals - https://www.codecademy.com/learn/introduction-to-javascript
+1. Intro to React - https://reactjs.org/tutorial/tutorial.html
+2. ES6 - https://medium.freecodecamp.org/want-to-learn-es6-take-this-free-23-part-course-and-become-a-javascript-ninja-55002db1ff74
+3. How to Learn React — A roadmap from beginner to advanced - https://medium.freecodecamp.org/learning-react-roadmap-from-scratch-to-advanced-bff7735531b6
+
+--- 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -6,65 +71,23 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
+The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `npm run lint:fix`
 
-### `yarn build`
+Runs eslint and fixes auto-fixable problems
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `npm run lint`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Only runs eslint without auto-fix
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm run test`
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Runs tests

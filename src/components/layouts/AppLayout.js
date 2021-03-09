@@ -1,5 +1,17 @@
 import React from 'react';
+import { Container } from 'reactstrap';
+import { Navbar, Footer } from 'components';
 
-export default function AuthLayout({ children }) {
-  return <div>{children}</div>;
-}
+const AppLayout = ({ children, ...props }) => (
+  <div className="wrapper">
+    <div className="main-panel">
+      <Navbar {...props} brandText="ToDos" />
+      <div className="content">
+        <Container fluid>{children}</Container>
+      </div>
+      <Footer fluid />
+    </div>
+  </div>
+);
+
+export default AppLayout;

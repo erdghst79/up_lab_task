@@ -1,11 +1,6 @@
 [build]
   publish = "build/"
-  command = "sed -i s%API_SERVER%${API_SERVER}%g netlify.toml && npm run build"
-
-[[redirects]]
-  from = "/graphql"
-  to = "API_SERVER/graphql"
-  status = 200
+  command = "npm run build"
 
 [[redirects]]
   from = "/*"

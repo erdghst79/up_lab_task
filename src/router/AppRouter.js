@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import React from 'react';
 // import useCurrentUser from 'hooks/auth/useCurrentUser';
 import AppLayout from 'components/layouts/AppLayout';
-import Home from 'pages/app/Home';
+import TodoList from 'pages/TodoList';
 import NotFound from 'pages/NotFound';
 import ScrollToTop from 'components/common/ScrollToTop';
 import routePaths from './route-paths';
@@ -11,13 +11,11 @@ import routePaths from './route-paths';
 const routes = [
   {
     path: routePaths.home,
-    component: Home,
+    component: TodoList,
   },
 ];
 
 const AppRouter = () => {
-  // const [me] = useCurrentUser();
-  // const emailVerified = get(me, 'verified');
   return (
     <AppLayout>
       <ScrollToTop />
