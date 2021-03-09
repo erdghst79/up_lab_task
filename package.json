@@ -3,18 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@apollo/react-hooks": "^3.1.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "apollo-cache-inmemory": "^1.6.5",
-    "apollo-client": "^2.6.8",
-    "apollo-link": "^1.2.14",
-    "apollo-link-context": "^1.0.20",
-    "apollo-link-error": "^1.1.13",
-    "apollo-link-http": "^1.5.17",
-    "graphql": "^15.0.0",
-    "graphql-tag": "^2.10.3",
     "lodash": "^4.17.15",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
@@ -32,12 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint ./src",
-    "lint:fix": "eslint --fix ./src",
-    "release": "standard-version",
-    "release:major": "yarn release -- --release-as major",
-    "release:minor": "yarn release -- --release-as minor",
-    "release:patch": "yarn release -- --release-as patch",
-    "graphql:dump": "node bin/schemaQuery.js"
+    "lint:fix": "eslint --fix ./src"
   },
   "eslintConfig": {
     "extends": [
@@ -66,8 +52,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1",
-    "standard-version": "^7.1.0"
+    "prettier": "^1.19.1"
   },
   "config": {
     "commitizen": {

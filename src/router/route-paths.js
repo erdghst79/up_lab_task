@@ -13,7 +13,6 @@ import UrlPattern from 'url-pattern';
 
 const routePaths = {
   home: '/',
-  login: '/login',
 };
 
 export const routePatterns = Object.entries(routePaths).reduce(
