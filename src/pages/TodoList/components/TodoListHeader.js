@@ -1,25 +1,46 @@
 import React from 'react';
-import { CardHeader, UncontrolledDropdown, DropdownToggle, DropdownItem, DropdownMenu } from 'reactstrap';
+import { CardHeader, Button, ButtonGroup } from 'reactstrap';
+import cn from 'classnames';
 
-const TodoListHeader = ({ title, actions }) => {
+const actions = [
+  {
+    label: 'All',
+    name: 'all',
+  },
+  {
+    label: 'Open',
+    name: 'open',
+  },
+  {
+    label: 'Closed',
+    name: 'close',
+  },
+];
+const TodoListHeader = ({ title, activeStatus, setActiveStatus }) => {
   return (
     <CardHeader>
       <h6 className="title d-inline">{title}</h6>
       {/* <p className="card-category d-inline"> today</p> */}
-      {actions.length > 0 ? (
-        <UncontrolledDropdown>
-          <DropdownToggle caret className="btn-icon" color="link" data-toggle="dropdown" type="button">
-            <i className="tim-icons icon-settings-gear-63" />
-          </DropdownToggle>
-          <DropdownMenu aria-labelledby="dropdownMenuLink" right>
-            {actions.map(({ title: actionTitle, action }) => (
-              <DropdownItem onClick={action} key={actionTitle}>
-                {actionTitle}
-              </DropdownItem>
-            ))}
-          </DropdownMenu>
-        </UncontrolledDropdown>
-      ) : null}
+      <ButtonGroup className="btn-group-toggle float-right" data-toggle="buttons">
+        {actions.map((action) => (
+          <Button
+            key={action.name}
+            tag="label"
+            className={cn('btn-simple', {
+              active: activeStatus === action.name,
+            })}
+            color="info"
+            id="0"
+            size="sm"
+            onClick={() => setActiveStatus(action.name)}
+          >
+            <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">{action.label}</span>
+            <span className="d-block d-sm-none">
+              <i className="tim-icons icon-single-02" />
+            </span>
+          </Button>
+        ))}
+      </ButtonGroup>
     </CardHeader>
   );
 };

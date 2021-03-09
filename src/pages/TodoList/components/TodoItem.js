@@ -20,8 +20,8 @@ const TodoItem = (props) => {
       <td>
         <p className="title">{message}</p>
       </td>
-      <td className="text-right">
-        <span>{dueDate ? <DueDate date={dueDate} format={DATE_FORMAT} /> : null}</span>
+      <td width={100}>{dueDate ? <DueDate date={dueDate} format={DATE_FORMAT} /> : null}</td>
+      <td width={40} className="text-right">
         {typeof onRemove === 'function' ? (
           <>
             <Button color="link" id={`tooltip_remove_${_id}`} title="" type="button" onClick={onRemove}>

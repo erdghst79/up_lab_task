@@ -7,7 +7,7 @@ const DueDate = ({ date, format }) => {
     format,
   ]);
 
-  return <p className="text-danger">{formatted}</p>;
+  return <span className="text-danger">{formatted}</span>;
 };
 
 export default DueDate;

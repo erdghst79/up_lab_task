@@ -44,27 +44,8 @@ const useLiveTodos = (status) => {
   return data;
 };
 
-const useStatusFilter = () => {
-  const [activeStatus, setActiveStatus] = React.useState('open');
-  const actions = [
-    {
-      title: 'Show all',
-      action: () => setActiveStatus('all'),
-    },
-    {
-      title: 'Show open',
-      action: () => setActiveStatus('open'),
-    },
-    {
-      title: 'Show closed',
-      action: () => setActiveStatus('close'),
-    },
-  ];
-  return { activeStatus, actions };
-};
-
 const TodoListCard = ({ title }) => {
-  const { activeStatus, actions } = useStatusFilter();
+  const [activeStatus, setActiveStatus] = React.useState('open');
   const todos = useLiveTodos(activeStatus);
 
   const handleRemoveTodo = React.useCallback((_id) => {
@@ -83,7 +64,11 @@ const TodoListCard = ({ title }) => {
 
   return (
     <Card className="card-tasks">
-      <TodoListHeader title={`${todos.length} ${title} (${activeStatus})`} actions={actions} />
+      <TodoListHeader
+        title={`${title} (${todos.length})`}
+        setActiveStatus={setActiveStatus}
+        activeStatus={activeStatus}
+      />
       <CardBody>
         <div className="table-full-width table-responsive">
           <Table>
