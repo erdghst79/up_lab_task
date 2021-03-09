@@ -31,9 +31,10 @@ const App = () => {
   const dbLoaded = useLoadDb();
   if (!dbLoaded) return <LoadingOverlay />;
   return (
-    <ToastContainer>
+    <>
       <RootRouter />
-    </ToastContainer>
+      <ToastContainer />
+    </>
   );
 };
 
