@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container } from 'reactstrap';
-import { Navbar, Footer } from 'components';
+import NavBar from '../layout/Navbar';
+import Footer from '../layout/Footer';
 
 const AppLayout = ({ children, ...props }) => (
   <div className="wrapper">
     <div className="main-panel">
-      <Navbar {...props} brandText="ToDos" />
+      <NavBar {...props} brandText="ToDos" />
       <div className="content">
         <Container fluid>{children}</Container>
       </div>

@@ -4,13 +4,15 @@ import { SingleDatePicker } from 'react-dates';
 import { ICON_AFTER_POSITION } from 'react-dates/constants';
 import { DATE_FORMAT } from 'constants/date';
 
-const DatePicker = (props) => {
-  const { date, onChange, focused, onFocusChange, ...rest } = props;
+export default function DatePicker(props) {
+  const { onChange, ...rest } = props;
+  const [isFocused, setIsFocused] = React.useState(false);
+  const onFocusChange = React.useCallback(({ focused }) => setIsFocused(focused), []);
+
   return (
     <SingleDatePicker
-      date={date}
       onDateChange={onChange}
-      focused={focused}
+      focused={isFocused}
       onFocusChange={onFocusChange}
       showClearDate
       showDefaultInputIcon
@@ -19,6 +21,4 @@ const DatePicker = (props) => {
       {...rest}
     />
   );
-};
-
-export default DatePicker;
+}

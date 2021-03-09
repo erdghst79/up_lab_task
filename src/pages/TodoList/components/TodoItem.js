@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
 import { Button, FormGroup, UncontrolledTooltip, Label } from 'reactstrap';
-import { DueDate } from 'components';
+import { DATE_FORMAT } from 'constants/date';
+import DueDate from './DueDate';
 
 const TodoItem = (props) => {
-  const { message, dueDate, open, _id, onChange, onRemove, isEdit } = props;
+  const { message, dueDate, open, _id, onChange, onRemove } = props;
   return (
     <tr>
       <td width="30">
@@ -17,12 +18,10 @@ const TodoItem = (props) => {
         </FormGroup>
       </td>
       <td>
-        <p className="title">
-          {isEdit ? 'editing:' : null} {message}
-        </p>
-        {dueDate ? <DueDate date={dueDate} /> : null}
+        <p className="title">{message}</p>
       </td>
-      <td className="td-actions text-right">
+      <td className="text-right">
+        <span>{dueDate ? <DueDate date={dueDate} format={DATE_FORMAT} /> : null}</span>
         {typeof onRemove === 'function' ? (
           <>
             <Button color="link" id={`tooltip_remove_${_id}`} title="" type="button" onClick={onRemove}>
@@ -34,26 +33,6 @@ const TodoItem = (props) => {
           </>
         ) : null}
       </td>
-      {/*
-        <td className="td-actions text-right">
-          <Button
-            color="link"
-            id={`tooltip_${_id}`}
-            title=""
-            type="button"
-            onClick={() => toggleEdit()}
-          >
-            <i className="tim-icons icon-pencil" />
-          </Button>
-          <UncontrolledTooltip
-            delay={0}
-            target={`tooltip_${_id}`}
-            placement="right"
-          >
-            Edit Task
-          </UncontrolledTooltip>
-        </td>
-      */}
     </tr>
   );
 };

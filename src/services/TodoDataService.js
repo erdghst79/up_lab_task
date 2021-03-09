@@ -1,33 +1,51 @@
-import { Todos as collection } from 'collections';
+import { Todos as TodosCollection } from 'collections';
+import EventEmitter from 'events';
 import Todo from 'models/Todo';
 
 const _withPersistAfterAction = (callback) => async (...args) => {
   await callback(...args);
-  collection.persist();
+  TodosCollection.persist();
 };
 
-class TodoDataService {
-  collection = collection;
+class TodoDataService extends EventEmitter {
+  collection = TodosCollection;
 
-  getAll = () => collection.find();
+  getAll = () => this.collection.find();
 
-  getClose = () => collection.find({ open: false });
+  getClose = () => this.collection.find({ open: false });
 
-  getOpen = () => collection.find({ open: true });
+  getOpen = () => this.collection.find({ open: true });
 
-  findOne = (selector) => collection.findOne(selector);
+  findOne = (selector) => this.collection.findOne(selector);
 
   update = _withPersistAfterAction(async (_id, doc) => {
     await Todo.validate(doc);
-    return collection.updateOne({ _id }, doc);
+    const updated = await this.collection.updateOne({ _id }, doc);
+    this.emit('update', updated);
   });
 
-  remove = _withPersistAfterAction((_id) => collection.remove({ _id }));
+  remove = _withPersistAfterAction(async (_id) => {
+    await this.collection.remove({ _id });
+    this.emit('remove', { _id });
+  });
 
   insert = _withPersistAfterAction(async (doc) => {
     await Todo.validate(doc);
-    return collection.insert(doc);
+    const _id = await this.collection.insert(doc);
+    this.emit('insert', { _id, ...doc });
   });
+
+  listenChanges = (cb) => {
+    const types = ['insert', 'remove', 'update'];
+    types.forEach((eventType) => {
+      this.on(eventType, cb);
+    });
+    return () => {
+      types.forEach((eventType) => {
+        this.off(eventType, cb);
+      });
+    };
+  };
 }
 
 export default new TodoDataService();

@@ -1,18 +1,13 @@
 import React, { Fragment } from 'react';
-import { TodoListCard, TodoForm } from 'components';
 
-const TodoList = (props) => {
-  const { todos, onCreateTodo, onToggleTodo, onRemoveTodo, actions } = props;
+import TodoListCard from './components/TodoListCard';
+import TodoForm from './components/TodoForm';
+
+export default function TodoList() {
   return (
     <>
-      <TodoForm onSubmit={onCreateTodo} />
-      <TodoListCard todos={todos} onToggleItem={onToggleTodo} onRemoveItem={onRemoveTodo} actions={actions} />
+      <TodoForm />
+      <TodoListCard />
     </>
   );
-};
-
-TodoList.defaultProps = {
-  todos: [],
-};
-
-export default TodoList;
+}
