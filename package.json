@@ -6,7 +6,9 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "events": "^3.3.0",
     "lodash": "^4.17.15",
+    "minimongo": "^6.8.2",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
@@ -14,6 +16,7 @@
     "react-loading": "^2.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-toastify": "^7.0.3",
     "url-pattern": "^1.0.3",
     "web-vitals": "^0.2.4"
   },
