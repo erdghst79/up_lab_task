@@ -13,6 +13,7 @@ import UrlPattern from 'url-pattern';
 
 const routePaths = {
   home: '/',
+  category: '/category/:categoryId',
 };
 
 export const routePatterns = Object.entries(routePaths).reduce(

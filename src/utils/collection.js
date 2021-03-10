@@ -20,7 +20,7 @@ class Collection {
   getCollection = () => db.get(this.name);
 
   insert(doc) {
-    const _id = shortid.generate();
+    const _id = doc._id || shortid.generate();
     const meta = {
       _id,
       _createdAt: Date.now(),

@@ -10,14 +10,15 @@ The application is supposed to perform the following actions:
 - mark todo as completed
 - remove todos
 - see all the todos along with completed
+- use categories to group todos
 
 ### Structure of the assignment
 In the daily life, programmers should fix bugs before adding features. Who is willing to use an application full of bugs, but with tons of features? That's why it is mandatory to complete all the bugs from the list.
 
-Tasks list is a list of new features that should be added to the working application. It should allow you to choose an order, pick only the features that you can implement.
+Tasks list is a list of new features that should be added to the working application. It should allow you to choose an order, pick only the features that you can implement. Even one implemented task counts, but we will pick students among the ones who get the most points.
 __Please take a note that different tasks have different number of points__.
 
-__Important__: partial task solution doesn't count. Solutions with bugs doesn't count - test your code.
+__Important__: partial task solution doesn't count. Solutions with critical bugs don't count - test your code.
 
 ## How to work on your assignment
 
@@ -27,7 +28,7 @@ __Important__: partial task solution doesn't count. Solutions with bugs doesn't 
 4. Start the app `npm run start` or `yarn start`
 5. Please try to have 1 commit per task/bugfix. When you complete your task, do not forget to mark it as completed in the list below. Just put an `x` into the checkbox between braces ( `- [ ]` - unchecked, `- [x]` - checked ).
 6. Do not forget to constantly push your changes.
-7. When you finish your assignment, please send an email to hi@uplab.io with the link to your GitHub repo and a list of finished tasks.
+7. When you finish your assignment, please send an email to ihor@uplab.io with the link to your GitHub repo and a list of finished tasks.
 
 We only accept your assignments in the GitHub. Do not send us any zip archives with your projects!
 
@@ -37,22 +38,35 @@ __Have a question?__ Please, do not hesitate to contact us at https://fb.me/upla
 
 ### Bugs (mandatory):
 
-- [ ] B1.
-- [ ] B2.
+- [ ] B1. Bug: status filter button displays on top of the calendar view when selecting task due date
+- [ ] B2. Bug: the app crashes after adding a new todo
 
 ### Tasks (optional):
 
-- [ ] T1.
-- [ ] T2.
-- [ ] T3.
-- [ ] T4.
-- [ ] T5. Deploy your demo app on Netlify or another hosting __4 points__ 
+- [ ] T1. Change a favicon and title of the app into something cool. __1 point__
+- [ ] T2. Highlight due dates in the todo list with different colors. __4 points__ 
+Requirements:
+* Green - the task's due date is 2+ days from today or the task is already completed.
+* Yellow - the task's due date is <2 days from today or today
+* Red - the task's due date has already passed
+- [ ] T3. Highlight the currently selected category in the sidebar with bold text __2 points__
+- [ ] T4. Allow user to delete any category created by him (category.readonly is false). Note: delete all todos in this category as well. __6 points__
+- [ ] T5. Allow user to edit category name of categories created by him (category.readonly is false) __6 points__
+- [ ] T6. On the "All" category page for each category display a separate card with the todos that belong to this category (to make this task easier, you can hide the filter and show only Open todos for each category only on this page). __8 points__
+- [ ] T7. Adapt the app to be usable on mobile (add a sidebar toggle button) __4 points__
+- [ ] T8. Deploy your demo app on Netlify or another hosting __4 points__ 
+- [ ] T9. Drag'n'drop to do list item into another list in desktop version __10 points__
+* https://github.com/atlassian/react-beautiful-dnd
+* https://egghead.io/lessons/react-reorder-a-list-with-react-beautiful-dnd
+- [ ] T10. Reorder todos within the list using drag'n'drop. Note: you need to implement T6 before starting on this one bacause items should be reordered within the category. __14 points__
+* https://github.com/atlassian/react-beautiful-dnd
+* https://egghead.io/lessons/react-reorder-a-list-with-react-beautiful-dnd
 
 Links:
 * http://netlify.com
 * https://zeit.co/
 
-__Note:__ you can do some extra stuff if you want. Please write about it somewhere and we will add extra points to your application!
+__Note:__ you can do some extra stuff even if you completed 0 tasks here. Please write about it somewhere and we will add extra points to your application and we may add you extra points!
 
 -----
 

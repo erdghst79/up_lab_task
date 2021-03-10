@@ -65,21 +65,11 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-only-warn": "^1.0.2",
     "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
     "prettier": "^1.19.1"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": "eslint --cache --fix"
   }
 }

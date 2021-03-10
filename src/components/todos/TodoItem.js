@@ -20,7 +20,9 @@ const TodoItem = (props) => {
       <td>
         <p className="title">{message}</p>
       </td>
-      <td width={100}>{dueDate ? <DueDate date={dueDate} format={DATE_FORMAT} /> : null}</td>
+      <td width={100}>
+        <DueDate date={dueDate} format={DATE_FORMAT} />
+      </td>
       <td width={40} className="text-right">
         {typeof onRemove === 'function' ? (
           <>

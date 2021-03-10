@@ -3,7 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import React from 'react';
 // import useCurrentUser from 'hooks/auth/useCurrentUser';
 import AppLayout from 'components/layouts/AppLayout';
-import TodoList from 'pages/TodoList';
+import Home from 'pages/Home';
+import Category from 'pages/Category';
 import NotFound from 'pages/NotFound';
 import ScrollToTop from 'components/common/ScrollToTop';
 import routePaths from './route-paths';
@@ -11,13 +12,17 @@ import routePaths from './route-paths';
 const routes = [
   {
     path: routePaths.home,
-    component: TodoList,
+    component: Home,
+  },
+  {
+    path: routePaths.category,
+    component: Category,
   },
 ];
 
 const AppRouter = () => {
   return (
-    <AppLayout>
+    <AppLayout routes={routes}>
       <ScrollToTop />
       <Switch>
         {routes.map(({ path, component, ...rest }) => (

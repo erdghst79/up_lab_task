@@ -1,15 +1,14 @@
 import React from 'react';
 import { Button, Card, CardBody, Input, InputGroupAddon, InputGroup } from 'reactstrap';
+import { useParams } from 'react-router-dom';
 import DatePicker from 'components/common/DatePicker';
 import _ from 'lodash';
 import TodoDataService from 'services/TodoDataService';
-import Todo from 'models/Todo';
 import { toast } from 'react-toastify';
 
 const createTodo = async (values) => {
   try {
-    const todo = Todo.init(values);
-    await TodoDataService.insert(todo);
+    await TodoDataService.insert(values);
   } catch (error) {
     toast.error(error.message);
   }
@@ -23,11 +22,13 @@ const TodoForm = ({ submitButtonLabel = 'Add +' }) => {
   const [message, setMessage] = React.useState(defaultState.message);
   const [dueDate, setDueDate] = React.useState(defaultState.dueDate);
 
+  const { categoryId } = useParams();
+
   const submittable = message.length > 3;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createTodo({ message, dueDate: dueDate ? dueDate.toDate().getTime() : dueDate });
+    createTodo({ message, dueDate: dueDate ? dueDate.toDate().getTime() : dueDate, categoryId });
     setMessage(defaultState.message);
     setDueDate(defaultState.dueDate);
   };

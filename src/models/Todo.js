@@ -10,9 +10,10 @@ class Todo {
       .required(),
     open: Joi.boolean().required(),
     dueDate: Joi.date().timestamp(),
+    categoryId: Joi.string(),
   });
 
-  editableFields = ['message', 'open', 'dueDate'];
+  editableFields = ['categoryId', 'message', 'open', 'dueDate'];
 
   defaults = {
     // dueDate: Date.now(),

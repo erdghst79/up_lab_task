@@ -1,39 +1,49 @@
 import { Todos as TodosCollection } from 'collections';
 import EventEmitter from 'events';
-import Todo from 'models/Todo';
+import TodoModel from 'models/Todo';
 
-const _withPersistAfterAction = (callback) => async (...args) => {
-  await callback(...args);
-  TodosCollection.persist();
+// const _withPersistAfterAction = (callback) => async (...args) => {
+//   await callback(...args);
+//   await TodosCollection.persist();
+// };
+const deleteUndefinedValuesFromObject = (o) => {
+  return Object.entries(o).reduce((acc, [key, value]) => {
+    if (typeof value === 'undefined') return acc;
+    return { ...acc, [key]: value };
+  }, {});
 };
-
 class TodoDataService extends EventEmitter {
   collection = TodosCollection;
 
-  getAll = () => this.collection.find();
+  getAll = (query = {}) => this.collection.find(deleteUndefinedValuesFromObject(query));
 
-  getClose = () => this.collection.find({ open: false });
+  getClose = (query = {}) => this.collection.find(deleteUndefinedValuesFromObject({ open: false, ...query }));
 
-  getOpen = () => this.collection.find({ open: true });
+  getOpen = (query = {}) => this.collection.find(deleteUndefinedValuesFromObject({ open: true, ...query }));
 
-  findOne = (selector) => this.collection.findOne(selector);
+  findOne = (selector) => this.collection.findOne(deleteUndefinedValuesFromObject(selector));
 
-  update = _withPersistAfterAction(async (_id, doc) => {
-    await Todo.validate(doc);
+  update = async (_id, doc) => {
+    await TodoModel.validate(doc);
     const updated = await this.collection.updateOne({ _id }, doc);
+    await TodosCollection.persist();
     this.emit('update', updated);
-  });
+  };
 
-  remove = _withPersistAfterAction(async (_id) => {
+  remove = async (_id) => {
     await this.collection.remove({ _id });
+    await TodosCollection.persist();
     this.emit('remove', { _id });
-  });
+  };
 
-  insert = _withPersistAfterAction(async (doc) => {
-    await Todo.validate(doc);
+  insert = async (values) => {
+    const doc = TodoModel.init(values);
+    await TodoModel.validate(doc);
     const _id = await this.collection.insert(doc);
+    await TodosCollection.persist();
     this.emit('insert', { _id, ...doc });
-  });
+    return { _id, ...doc };
+  };
 
   listenChanges = (cb) => {
     const types = ['insert', 'remove', 'update'];
