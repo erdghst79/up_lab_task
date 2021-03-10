@@ -32,6 +32,8 @@ __Important__: partial task solution doesn't count. Solutions with critical bugs
 
 We only accept your assignments in the GitHub. Do not send us any zip archives with your projects!
 
+We recommend you to use VSCode while working on your assignment and install an [ESlint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) from market to quickly see the syntax errors and other recommendations.
+
 __Have a question?__ Please, do not hesitate to contact us at https://fb.me/uplab.life, https://instagr.am/uplab.life or by email hi@uplab.io
 
 ## Assignment
@@ -70,8 +72,9 @@ __Note:__ you can do some extra stuff even if you completed 0 tasks here. Please
 
 0. JS fundamentals - https://www.codecademy.com/learn/introduction-to-javascript
 1. Intro to React - https://reactjs.org/tutorial/tutorial.html
-2. ES6 - https://medium.freecodecamp.org/want-to-learn-es6-take-this-free-23-part-course-and-become-a-javascript-ninja-55002db1ff74
-3. How to Learn React — A roadmap from beginner to advanced - https://medium.freecodecamp.org/learning-react-roadmap-from-scratch-to-advanced-bff7735531b6
+2. React Crashcourse 2021 - https://www.youtube.com/watch?v=w7ejDZ8SWv8
+3. ES6 - https://medium.freecodecamp.org/want-to-learn-es6-take-this-free-23-part-course-and-become-a-javascript-ninja-55002db1ff74
+4. How to Learn React — A roadmap from beginner to advanced - https://medium.freecodecamp.org/learning-react-roadmap-from-scratch-to-advanced-bff7735531b6
 
 --- 
 
