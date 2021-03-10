@@ -34,7 +34,7 @@ We only accept your assignments in the GitHub. Do not send us any zip archives w
 
 We recommend you to use VSCode while working on your assignment and install an [ESlint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) from market to quickly see the syntax errors and other recommendations.
 
-__Have a question?__ Please, do not hesitate to contact us at https://fb.me/uplab.life, https://instagr.am/uplab.life or by email hi@uplab.io
+__Have a question?__ Please, do not hesitate to contact us at https://instagr.am/uplab.life or by email ihor@uplab.io
 
 ## Assignment
 
