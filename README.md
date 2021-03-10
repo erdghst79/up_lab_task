@@ -55,16 +55,12 @@ Requirements:
 - [ ] T6. On the "All" category page for each category display a separate card with the todos that belong to this category (to make this task easier, you can hide the filter and show only Open todos for each category only on this page). __8 points__
 - [ ] T7. Adapt the app to be usable on mobile (add a sidebar toggle button) __4 points__
 - [ ] T8. Deploy your demo app on Netlify or another hosting __4 points__ 
-- [ ] T9. Drag'n'drop to do list item into another list in desktop version __10 points__
-* https://github.com/atlassian/react-beautiful-dnd
-* https://egghead.io/lessons/react-reorder-a-list-with-react-beautiful-dnd
-- [ ] T10. Reorder todos within the list using drag'n'drop. Note: you need to implement T6 before starting on this one bacause items should be reordered within the category. __14 points__
-* https://github.com/atlassian/react-beautiful-dnd
-* https://egghead.io/lessons/react-reorder-a-list-with-react-beautiful-dnd
-
 Links:
 * http://netlify.com
 * https://zeit.co/
+- [ ] T9. Drag'n'drop to do list item into another list in desktop version __10 points__
+* https://github.com/atlassian/react-beautiful-dnd
+* https://egghead.io/lessons/react-reorder-a-list-with-react-beautiful-dnd
 
 __Note:__ you can do some extra stuff even if you completed 0 tasks here. Please write about it somewhere and we will add extra points to your application and we may add you extra points!
 
