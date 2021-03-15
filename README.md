@@ -78,6 +78,13 @@ __Note:__ you can do some extra stuff even if you completed 0 tasks here. Please
 
 --- 
 
+## Environment
+
+- Node.js v12.16.3 (nvm)
+- npm - v6.14.4 (you can use yarn instead of npm)
+
+The app should work in Node 8, 10, 12, 14 as well
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
