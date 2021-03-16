@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "7.21.0",
+    "eslint": "7.22.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-only-warn": "1.0.2",
