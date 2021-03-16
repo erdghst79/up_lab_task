@@ -7,7 +7,7 @@
 ### Tasks (optional):
 
 - [ ] T1. Change a favicon and title of the app into something cool. __1 point__
-- [ ] T2. Highlight due dates in the todo list with different colors. __4 points__ 
+- [X] T2. Highlight due dates in the todo list with different colors. __4 points__ 
 Requirements:
 * Green - the task's due date is 2+ days from today or the task is already completed.
 * Yellow - the task's due date is <2 days from today or today
