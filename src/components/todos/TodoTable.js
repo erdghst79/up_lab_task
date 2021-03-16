@@ -6,13 +6,11 @@ import TodoDataService from 'services/TodoDataService';
 import TodoItem from './TodoItem';
 
 export default function TodoTable({ todos }) {
-  const handleRemoveTodo = React.useCallback((_id) => {
-    TodoDataService.remove(_id);
-  }, []);
 
-  if (!todos.length) return <div>No todos in your list</div>;
+ if (!todos.length) return <div>No todos in your list</div>;
 
-  const handleToggleTodo = React.useCallback(async (_id) => {
+
+const handleToggleTodo = React.useCallback(async (_id) => {
     try {
       const todo = TodoDataService.findOne({ _id });
       const updated = todo.open ? Todo.close(todo) : Todo.reopen();
@@ -20,6 +18,10 @@ export default function TodoTable({ todos }) {
     } catch (error) {
       toast.error(error.message);
     }
+  }, []);
+
+  const handleRemoveTodo = React.useCallback((_id) => {
+    TodoDataService.remove(_id);
   }, []);
 
   return (
