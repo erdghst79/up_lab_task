@@ -173,13 +173,15 @@
       &:hover:not(.active) > a,
       &:focus:not(.active) > a{
         p,i{
-          color: $white;
+        color: $white;
+          font-weight: bold;
         }
       }
 
       &:hover:not(.active) > a i,
       &:focus:not(.active) > a i{
-        color: $white;
+        color: #39e3df;
+
       }
 
       &.active > a:not([data-toggle="collapse"]){

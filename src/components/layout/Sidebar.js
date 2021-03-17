@@ -40,21 +40,28 @@ function Sidebar() {
         <Nav className={c.nav}>
           {navItems.map((route) => (
             <li key={route.path}>
-              <NavLink to={route.path} className="nav-link" activeClassName="active">
+              <NavLink to={route.path} className="nav-link" activeClassName="active"
+                activeStyle={{
+                 fontWeight: "bold"
+                                       }}>
                 {route.icon}
-                <p>{route.title}</p>
+                {route.title}
               </NavLink>
             </li>
           ))}
           {categories.map((category) => (
             <li key={category._id}>
               <NavLink
+
                 to={routePatterns.category.stringify({ categoryId: category._id })}
                 className="nav-link"
                 activeClassName="active"
+                      activeStyle={{
+                           fontWeight: "bold"
+                         }}
               >
                 <i className={category.iconClass || 'tim-icons icon-tag'} />
-                <p>{category.title}</p>
+                {category.title}
               </NavLink>
             </li>
           ))}
