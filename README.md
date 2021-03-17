@@ -12,7 +12,7 @@ Requirements:
 * Green - the task's due date is 2+ days from today or the task is already completed.
 * Yellow - the task's due date is <2 days from today or today
 * Red - the task's due date has already passed
-- [ ] T3. Highlight the currently selected category in the sidebar with bold text __2 points__
+- [X] T3. Highlight the currently selected category in the sidebar with bold text __2 points__(! Without category All !)
 - [ ] T4. Allow user to delete any category created by him (category.readonly is false). Note: delete all todos in this category as well. __6 points__
 - [ ] T5. Allow user to edit category name of categories created by him (category.readonly is false) __6 points__
 - [ ] T6. On the "All" category page for each category display a separate card with the todos that belong to this category (to make this task easier, you can hide the filter and show only Open todos for each category only on this page). __8 points__
